@@ -1,0 +1,40 @@
+﻿@model DACN.Models.DatLichKham
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<div>
+    <h2>Chi tiết đặt lịch</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BenhNhan.HoTen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BenhNhan.HoTen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DichVu.TenDichVu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DichVu.TenDichVu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDatLich)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDatLich)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDatLich }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

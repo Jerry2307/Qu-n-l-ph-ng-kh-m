@@ -1,0 +1,126 @@
+﻿@model IEnumerable<DACN.Models.DatLichKham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tables - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+}
+
+<main>
+    <div class="container-fluid px-4">
+        <div class="row">
+            <h1 class="mt-4">Thống Kê</h1>
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">
+                        Tổng bệnh nhân
+                        <h3>@ViewBag.TongBenhNhan</h3>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="@Url.Action("Index","BenhNhan")">Xem chi tiết</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">
+                        Tổng dịch vụ
+                        <h3>@ViewBag.TongDichVu</h3>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="@Url.Action("Index","DichVu")">Xem chi tiết</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body">
+                        Tổng bác sĩ
+                        <h3>@ViewBag.TongBacSi</h3>
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="@Url.Action("Index","BacSi")">Xem chi tiết</a>
+                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 mb-3">
+                <div class="card">
+                    <div class="card-header">
+                        <span>
+                            <i class="bi bi-table me-2"></i>
+                        </span>
+                        <h5 style="margin-top: -20px">Quản lý lịch khám</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>Tên dịch vụ</th>
+                                        <th>Tên bệnh nhân</th>
+                                        <th>Chuyên khoa</th>
+                                        <th>Bác sĩ</th>
+                                        <th>Ngày đặt lịch</th>
+                                        <th>Triệu chứng</th>
+                                        <th>Trạng thái</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Tên dịch vụ</th>
+                                        <th>Tên bệnh nhân</th>
+                                        <th>Chuyên khoa</th>
+                                        <th>Bác sĩ</th>
+                                        <th>Ngày đặt lịch</th>
+                                        <th>Triệu chứng</th>
+                                        <th>Trạng thái</th>
+                                        <th></th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@Html.DisplayFor(modelItem => item.DichVu.TenDichVu)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.BenhNhan.HoTen)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.BacSi.ChuyenKhoa.TenChuyenKhoa)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.BacSi.TenBacSi)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.NgayDatLich)</td>
+                                            <td>@Html.DisplayFor(modelItem => item.TrieuChung)</td>
+                                            <td>
+                                                @if (item.TrangThai == true)
+                                                {<button type="button" class="btn btn-outline-success" disabled="disabled">Đã khám</button>}
+                                                else
+                                                {@Html.ActionLink("Chưa khám", "UpdateLichKham", new { id = item.MaDatLich }, new { @class = "btn btn-outline-danger" })}
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaDatLich })
+                                        </td>
+                                    </tr>
+                                }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="~/Areas/Area/Content/js/datatables-simple-demo.js"></script>

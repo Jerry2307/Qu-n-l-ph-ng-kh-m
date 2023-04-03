@@ -1,0 +1,13 @@
+.silebar{
+    width: 100px;
+    height: 450px;
+    background-color: silver;
+    float: left;
+    text-align: center;
+}
+.content{
+    width: 1000px;
+    height: 450px;
+    background-color: black;
+    float: left;
+}

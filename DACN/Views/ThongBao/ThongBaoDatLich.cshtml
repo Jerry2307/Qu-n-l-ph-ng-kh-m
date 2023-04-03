@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ThongBaoDatLich";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="~/Content/CSS/TBDL.css" rel="stylesheet" />
+}
+
+<div class="left-sec">
+    <div class="content">
+        <p>
+
+            Cảm ơn bạn đã sử dụng dịch vụ đặt lịch bên phòng khám của chúng tôi. Chúc bạn có một ngày thật tốt lành!!!!
+        </p>
+        <p>
+            Bạn muốn tiếp tục
+        </p>
+    </div>
+    <button class="discover-btn1">
+        <a href="@Url.Action("DatLich","DatLich", new {MaBenhNhan = Session["MaBenhNhan"] })">Đặt lịch khám</a><span><i class="fa fa-arrow-circle-o-right"></i></span>
+    </button>
+    <p>
+        Hay
+    </p>
+    <button class="discover-btn2">
+        <a href="@Url.Action("TrangChuUser","TrangChu")">Trở về trang chủ</a><span><i class="fa fa-arrow-circle-o-right"></i></span>
+    </button>
+</div>
+

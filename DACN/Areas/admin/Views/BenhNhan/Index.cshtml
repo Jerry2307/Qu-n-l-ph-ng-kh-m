@@ -1,0 +1,98 @@
+﻿@model IEnumerable<DACN.Models.BenhNhan>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tables - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+}
+
+<div id="layoutSidenav_content", style="padding-left: 0px; top: -10px">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">Danh sách bệnh nhân</h1>
+            <div class="card mb-4" style="margin-top:50px">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Bảng dang sách
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Tên bệnh nhân</th>
+                                <th>Tài khoản</th>
+                                <th>Mật khẩu</th>
+                                <th>Năm sinh</th>
+                                <th>Email</th>
+                                <th>Giới tính</th>
+                                <th>Ảnh</th>
+                                <th>CMND/CCCD</th>
+                                <th>Dân tộc</th>
+                                <th>Số điện thoại</th>
+                                <th>Địa chỉ</th>
+                                <th>            </th>
+                            </tr>
+                        </thead>
+
+                        <tfoot>
+                            <tr>
+                                <th>Tên bệnh nhân</th>
+                                <th>Tài khoản</th>
+                                <th>Mật khẩu</th>
+                                <th>Năm sinh</th>
+                                <th>Email</th>
+                                <th>Giới tính</th>
+                                <th>Ảnh</th>
+                                <th>CMND/CCCD</th>
+                                <th>Dân tộc</th>
+                                <th>Số điện thoại</th>
+                                <th>Địa chỉ</th>
+                                <th>            </th>
+                            </tr>
+                        </tfoot>
+
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.HoTen)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.TenDangNhap)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.MatKhau)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.NamSinh)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                    <td>
+                                        @if (item.GioiTinh == true)
+                                        {
+                                            @Html.Encode("Nam")
+                                        }
+                                        @if (item.GioiTinh == false)
+                                        {   
+                                            @Html.Encode("Nữ")
+                                        }
+                                    </td>
+                                    <td><img src="@Url.Content("~/HinhAnh/" + item.Anh)" width="110px" </td>
+                                    <td>@Html.DisplayFor(modelItem => item.CMND_CCCD)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.DanToc)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.SDT)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                                    <td>
+                                        @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaBenhNhan })
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="~/Areas/admin/Content/js/datatables-simple-demo.js"></script>

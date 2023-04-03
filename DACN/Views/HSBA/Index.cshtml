@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DACN.Models.HoSoBenhAn>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h1 style="text-align:center">Hồ sơ bệnh án</h1>
+
+<table style="margin-left:25%;" border="1">
+    <tr style="text-align:center;">
+        <th>
+            Tên bệnh nhân
+        </th>
+        <th>
+            Tên người thân
+        </th>
+        <th>
+            Ngày nhập viện
+        </th>
+        <th>
+            Ngày xuất viện
+        </th>
+        <th>
+            Tóm tắt bệnh án
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.BenhNhan.HoTen)
+            </td>
+            <td style="text-align:center">
+                @Html.DisplayFor(modelItem => item.NguoiThan.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayNhapVien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayXuatVien)
+            </td>
+            <td >
+                @Html.DisplayFor(modelItem => item.TomTatBenhAn)
+            </td>
+        </tr>
+    }
+</table>
+

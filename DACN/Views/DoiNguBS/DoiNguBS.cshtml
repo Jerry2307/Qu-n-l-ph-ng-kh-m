@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DACN.Models.BacSi>
+
+@{
+    ViewBag.Title = "DoiNguBS";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="~/Content/CSS/bs1.css" rel="stylesheet" />
+    <title>Đội ngũ Bác sĩ</title>
+}
+
+<div class="main-title">
+    <div class="ten"><h2>Đội ngũ bác sĩ</h2></div>
+</div>
+
+<div class="name-list">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="display: flex" >
+            <div class="card-content">
+                <img src="@Url.Content("~/HinhAnh/" + item.Anh)" width="200px" />
+                <div class="card-top">
+                    @Html.DisplayFor(modelItem => item.TrinhDo)
+                </div>
+                <div class="card-top">
+                    <a href="#" style="color: green" class="card-title">@Html.DisplayFor(modelItem => item.TenBacSi)</a>
+                </div>
+                <br>
+                <hr style="background-color: red">
+                <div class="card-middle">
+                    <h4 style="text-align: center; " class="card-k">@Html.DisplayFor(modelItem => item.ChuyenKhoa.TenChuyenKhoa)</h4>
+                </div>
+            </div>
+        </div>
+    }
+    </div>

@@ -1,0 +1,63 @@
+﻿@model DACN.Models.BenhNhan
+
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="~/Content/CSS/DangKy.css" rel="stylesheet" />
+    <title>Đăng ký</title>
+}
+
+<div class="Content-logup">     
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <h2 style="text-align: center; margin-top: -5px">Đăng Ký</h2>
+
+        <label for="fname">Họ tên đầy đủ </label>
+        <input type="text" id="hoten" name="hoten" placeholder="Nhập họ tên...">
+        <h5 style="color:red">@ViewData["loi1"]</h5>
+
+
+        <label for="fname">Tên đăng nhập</label>
+        <input type="text" id="tendangnhap" name="tendangnhap" placeholder="Nhập tên đăng nhập...">
+        <h5 style="color:red">@ViewData["loi2"]</h5>
+
+        <label for="country">Mật khẩu</label>
+        <input  type="password" id="matkhau" name="matkhau" placeholder="Nhập mật khẩu...">
+        <h5 style="color:red">@ViewData["loi3"]</h5>
+
+        <label for="fname">Năm sinh</label>
+        <input type="text" id="namsinh" name="namsinh" placeholder="Nhập năm sinh...">
+        <h5 style="color:red">@ViewData["loi4"]</h5>
+
+        <label for="country">Email</label>
+        <input type="text" id="email" name="email" placeholder="Nhập Email...">
+        <h5 style="color:red">@ViewData["loi5"]</h5>
+
+        <div class="form-group">
+            Giới tính
+            <div class="col-md-10">
+                @Html.DropDownListFor(modelItem => modelItem.GioiTinh, new[] { new SelectListItem { Text = "Nam", Value = "True" }, new SelectListItem { Text = "Nữ", Value = "False" } })
+                @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <label style="margin-bottom:20px" for="fname">CCCD/CMND</label>
+        <input type="text" id="cmnd_cccd" name="cmnd_cccd" placeholder="Nhập CCCD/CMND...">
+        <h5 style="color:red">@ViewData["loi6"]</h5>
+
+        <label for="fname">Dân tộc</label>
+        <input type="text" id="dantoc" name="dantoc" placeholder="Nhập dân tộc...">
+        <h5 style="color:red">@ViewData["loi7"]</h5>
+
+        <label for="fname">Địa chỉ</label>
+        <input type="text" id="diachi" name="diachi" placeholder="Nhập địa chỉ...">
+        <h5 style="color:red">@ViewData["loi8"]</h5>
+
+        <label for="country">Số điện thoại</label>
+        <input type="text" id="sdt" name="sdt" placeholder="Nhập số điện thoại...">
+        <h5 style="color:red">@ViewData["loi9"]</h5>
+
+        <button class="Logup">Đăng Ký</button>
+    }
+</div>

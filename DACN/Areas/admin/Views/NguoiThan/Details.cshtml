@@ -1,0 +1,33 @@
+﻿@model DACN.Models.NguoiThan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<div>
+    <h2>Chi tiết của người thân</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.HoTen) Họ tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NamSinh) Năm sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamSinh)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaNguoiThan }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,110 @@
+﻿@using DACN.Models
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.csss">   
+    <link href="~/Content/CSS/Tong.css" rel="stylesheet" />
+</head>
+
+<body>
+    <section id="wrapper">
+        <div id="header">
+            <nav class="container">
+                <ul id="main-menu">
+                    <li><a href="@Url.Action("TrangChuUser","TrangChu")">Trang Chủ</a> </li>
+
+                    <li><a href="@Url.Action("DoiNguBS","DoiNguBS")">Đội ngũ bác sĩ</a></li>
+
+                    <li>
+                        <a href="">Chuyên khoa</a>
+                        <ul style="z-index:2" class="sub-menu">
+                            <li><a href="@Url.Action("TimMach", "ChuyenKhoaBV")">Chuyên khoa tim mạch</a></li>
+                            <li><a href="@Url.Action("CoXuongKhop", "ChuyenKhoaBV")">Chuyên khoa cơ xương khớp</a></li>
+                            <li><a href="@Url.Action("RangHamMat", "ChuyenKhoaBV")">Khoa Răng hàm mặt</a></li>
+                            <li><a href="@Url.Action("ChuanDoanHinhAnh", "ChuyenKhoaBV")">Khoa Chuẩn đoán hình ảnh</a></li>
+                            <li><a href="@Url.Action("NoiTiet", "ChuyenKhoaBV")">Khoa Nội tiết</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="@Url.Action("DV","DichVuKham")">Dịch vụ khám</a>
+                    </li>
+                    <li><a href="@Url.Action("TuVan","TuVan")">Tư vấn</a></li>
+
+                    @if (Session["TaiKhoan"] == null)
+                    {
+                        <li><a href="@Url.Action("DangNhap","User")">Đặt lịch khám</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@Url.Action("DatLich","DatLich", new {MaBenhNhan = Session["MaBenhNhan"] })">Đặt lịch khám</a></li>
+                    }
+
+                    @if (Session["TaiKhoan"] == null)
+                    {
+                        <li>
+                            <a href="">Tài khoản</a>
+                            <ul style="z-index:2" class="sub-menu">
+                                <li><a href="@Url.Action("DangNhap","User")">Đăng nhập</a></li>
+                                <li><a href="@Url.Action("DangKy","User")">Đăng ký</a></li>
+                            </ul>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="@Url.Action("HoSoUser", "HoSoNguoiDung", new { MaBenhNhan = Session["MaBenhNhan"] })">@Session["HoTen"].ToString()</a>
+                            <ul style="z-index:2" class="sub-menu">
+                                <li><a href="@Url.Action("Index","HSBA", new { MaBenhNhan = Session["MaBenhNhan"] })">Hồ sơ bệnh án</a></li>
+                                <li><a href="@Url.Action("Index","LichSuKham", new { MaBenhNhan = Session["MaBenhNhan"] })">Lịch sử khám bệnh</a></li>
+                                <li><a href="@Url.Action("DangXuat","User")">Đăng xuất</a></li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <section id="Content">
+        @RenderBody()
+    </section>
+    <section id="Footer">
+        <div class="row">
+            <div class="boxcenter2">
+                <div class="boxfooter1">
+                    <h4>LIÊN KẾT MẠNG XÃ HỘI</h4>
+                </div>
+                <div class="boxfooter2">
+                    <h4>GIỜ LÀM VIỆC</h4>
+                    <div class="add mrb10">
+                        Từ Thứ 2 - Chủ nhật:	7h00 - 17h00
+                    </div>
+                    <div class="add mrb10">
+                        Khám Nội - Đa khoa:	7h00 - 17h00
+                    </div>
+                    <div class="add mrb10">
+                        Khám Ngoại:	8h00 - 17h00
+                    </div>
+                    <div class="add mrb10">
+                        Cấp cứu:	24/24
+                    </div>
+                    <div class="add mrb10">
+                        Trực sinh:	24/24
+                    </div>
+                    <div class="add mrb10">
+                        Khám Ung bướu:	Thứ 2 đến thứ 7 từ 8h00-17h00
+                    </div>
+                </div>
+                <div class="boxfooter3">
+                    <h4>SINH VIÊN THỰC HIỆN</h4>
+                    <div class="add mrb10"> Lê Anh Duy</div>
+                    <div class="add mrb10"> Nguyễn Trung Nguyên</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

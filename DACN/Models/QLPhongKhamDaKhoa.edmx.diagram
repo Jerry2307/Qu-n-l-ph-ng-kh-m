@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5056a1f04ffc46a5bc9786d9a61734ed" Name="Diagram1">
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.Admin" Width="1.5" PointX="5.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.BacSi" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.BenhNhan" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.ChuyenKhoa" Width="1.5" PointX="1.5" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.DatLichKham" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.DichVu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.HoSoBenhAn" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.NguoiThan" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.sysdiagram" Width="1.5" PointX="7.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLPhongKhamDaKhoaModel.TuVan" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <AssociationConnector Association="QLPhongKhamDaKhoaModel.FK_BacSi_ChuyenKhoa" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongKhamDaKhoaModel.FK_DatLichKham_BacSi" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongKhamDaKhoaModel.FK_TuVan_BacSi" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongKhamDaKhoaModel.FK_DatLichKham_BenhNhan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongKhamDaKhoaModel.FK_HoSoBenhNhan_BenhNhan" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongKhamDaKhoaModel.FK_DatLichKham_DichVu" ManuallyRouted="false" />
+        <AssociationConnector Association="QLPhongKhamDaKhoaModel.FK_HoSoBenhNhan_NguoiThan" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

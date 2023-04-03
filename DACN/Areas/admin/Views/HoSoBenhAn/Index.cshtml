@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DACN.Models.HoSoBenhAn>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tables - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+}
+
+<div id="layoutSidenav_content", style="padding-left: 20px; top: 10px">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">Danh sách hồ sơ bệnh án</h1>
+            <div class="card mb-4">
+                <a href="@Url.Action("Create","HoSoBenhAn")">Thêm hồ sơ bệnh án</a>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Bảng dang sách
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Tên bệnh nhân</th>
+                                <th>Tên người thân</th>
+                                <th>Ngày nhập viện</th>
+                                <th>Ngày xuất viện</th>
+                                <th>Tóm tắt bệnh án</th>
+                                <th>        </th>
+                            </tr>
+                        </thead>
+
+                        <tfoot>
+                            <tr>
+                                <th>Tên bệnh nhân</th>
+                                <th>Tên người thân</th>
+                                <th>Ngày nhập viện</th>
+                                <th>Ngày xuất viện</th>
+                                <th>Tóm tắt bệnh án</th>
+                                <th>        </th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.BenhNhan.HoTen)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.NguoiThan.HoTen)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.NgayNhapVien)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.NgayXuatVien)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.TomTatBenhAn)</td>
+                                    <td>
+                                        @Html.ActionLink("Sửa", "Edit", new { id = item.MaHoSo }) |
+                                        @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaHoSo }) |
+                                        @Html.ActionLink("Xóa", "Delete", new { id = item.MaHoSo })
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="~/Areas/admin/Content/js/datatables-simple-demo.js"></script>

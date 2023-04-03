@@ -1,0 +1,9 @@
+﻿@model IEnumerable<DACN.Models.ChuyenKhoa>
+
+@foreach (var item in Model)
+{
+    <a href="@Url.Action("ChuyenKhoa","DoiNguBS", new {id = item.ChuyenKhoa})" class="list-group-item">
+        @item.ChuyenKhoa
+    </a>
+}
+

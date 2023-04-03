@@ -1,0 +1,63 @@
+﻿@model DACN.Models.HoSoBenhAn
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<h3>Bạn có chắc chắn muốn xóa không?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.HiddenFor(model => model.BenhNhan.HoTen) Họ tên bệnh nhân
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BenhNhan.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NguoiThan.HoTen) Họ tên người thân
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiThan.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NgayNhapVien) Ngày nhập viện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayNhapVien)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NgayXuatVien) Ngày xuất viện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayXuatVien)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.TomTatBenhAn) Tóm tắt bệnh án
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TomTatBenhAn)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

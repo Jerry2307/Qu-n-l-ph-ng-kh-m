@@ -1,0 +1,64 @@
+﻿@model DACN.Models.TuVan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<div>
+    <h2>Chi tiết</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.HoTen) Họ và tên
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.Email) Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.SDT) Số điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.BacSi.ChuyenKhoa.TenChuyenKhoa) Chuyên khoa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BacSi.ChuyenKhoa.TenChuyenKhoa)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.BacSi.TenBacSi) Bác sĩ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BacSi.TenBacSi)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NDTuVan) Nội dung tư vấn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NDTuVan)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,35 @@
+﻿
+.entry-title__h1 {
+    margin-top: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 24px;
+}
+
+h1 {
+    line-height: 1.5;
+    padding: 0.5rem 0;
+}
+.entry-content p {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    line-height: 1.6;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+strong, b {
+    font-weight: 700;
+}
+
+#Content table {
+    margin-left: 30%;
+    border-collapse: collapse;
+}
+
+#Content table tr td {
+    border: 1px solid black;
+}

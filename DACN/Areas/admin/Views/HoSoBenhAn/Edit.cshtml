@@ -1,0 +1,68 @@
+﻿@model DACN.Models.HoSoBenhAn
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>Chỉnh sửa hồ sơ</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaHoSo)
+
+        <div class="form-group">
+            <h5>Họ tên bệnh nhân</h5>
+            <div class="col-md-10">
+                @Html.DropDownList("MaBenhNhan", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaBenhNhan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <h5>Họ tên người thân</h5>
+            <div class="col-md-10">
+                @Html.DropDownList("MaNguoiThan", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.MaNguoiThan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <h5>Ngày nhập viện</h5>
+            <div class="col-md-10">
+                <input type="date" name="NgayNhapVien" />
+                @Html.ValidationMessageFor(model => model.NgayNhapVien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <h5>Ngày xuất viện</h5>
+            <div class="col-md-10">
+                <input type="date" name="NgayXuatVien" />
+                @Html.ValidationMessageFor(model => model.NgayXuatVien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <h5>Tóm tắt bệnh án</h5>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TomTatBenhAn, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TomTatBenhAn, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

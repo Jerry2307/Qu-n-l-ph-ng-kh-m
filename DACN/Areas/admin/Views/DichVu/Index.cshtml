@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DACN.Models.DichVu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Tables - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+}
+
+<div id="layoutSidenav_content" , style="padding-left: 20px; top: 10px">
+    <main>
+        <div class="container-fluid px-4">
+            <h1 class="mt-4">Danh sách các dịch vụ y tế</h1>
+            <div class="card mb-4">
+                <a href="@Url.Action("Create","DichVu")">Thêm các dịch vụ y tế</a>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Bảng dang sách
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Tên dịch vụ</th>
+                                <th>Giá</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+
+                        <tfoot>
+                            <tr>
+                                <th>Tên dịch vụ</th>
+                                <th>Giá</th>
+                                <th> </th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.TenDichVu)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Gia)</td>
+                                    <td>
+                                        @Html.ActionLink("Sửa", "Edit", new { id = item.MaDichVu }) |
+                                        @Html.ActionLink("Chi Tiết", "Details", new { id = item.MaDichVu }) |
+                                        @Html.ActionLink("Xóa", "Delete", new { id = item.MaDichVu })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="~/Areas/admin/Content/js/datatables-simple-demo.js"></script>

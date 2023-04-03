@@ -1,0 +1,111 @@
+﻿@model DACN.Models.BenhNhan
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<div>
+    <h2>Chi tiết của bệnh nhân</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.HoTen) Họ và tên bệnh nhân
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.TenDangNhap) Tên đăng nhập
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDangNhap)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.MatKhau) Mật khẩu
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NamSinh) Năm sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamSinh)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.Email) Email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.GioiTinh) Giới tính
+        </dt>
+
+        <dd>
+            @if (Model.GioiTinh == true)
+            {
+                @Html.Encode("Nam")
+            }
+            @if (Model.GioiTinh == false)
+            {
+                @Html.Encode("Nữ")
+            }
+        </dd>
+
+        <div>
+            @Html.HiddenFor(model => model.Anh)
+            <h6>Hình ảnh</h6>
+            <div>
+                <img src="@Url.Content("~/HinhAnh/"+ @Model.Anh)" width=110 px />
+            </div>
+        </div>
+
+        <dt>
+            @Html.HiddenFor(model => model.CMND_CCCD) CMND/CCCD
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CMND_CCCD)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.DanToc) Dân tộc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DanToc)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.DiaChi) Địa chỉ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.SDT) Số điện thoại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

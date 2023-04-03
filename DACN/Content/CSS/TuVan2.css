@@ -1,0 +1,92 @@
+﻿#Content {
+    margin: 0px auto;
+    width: 75%;
+}
+
+.Content-page {
+    width: 100%;
+}
+
+.form {
+    float: left;
+    width: 42%;
+    margin: auto;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[name=gender] {
+    width: 21%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    resize: vertical;
+}
+
+.Login {
+    padding: 9px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+
+.Login:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.Content-menu {
+margin-left: 110px;
+width: 35%;
+float: left;
+display: inline-block;
+}
+
+.Content-menu li {
+    padding: 8px 15px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.Content-menu li a {
+    color: #50aa3f;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.Content-advise select {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 3%;
+    line-height: 60px;
+    background: #fff;
+    border-radius: .25em;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+    .Content-advise select option {
+        height: 60px;
+    }
+ul{
+    list-style:none;
+}

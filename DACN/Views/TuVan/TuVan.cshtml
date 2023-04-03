@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "TuVan";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="~/Content/CSS/TuVan2.css" rel="stylesheet" />
+    <title>Tư vấn</title>
+}
+
+@*<div class="sec32_row0"><p class="entry-breadcrumb yoast_breadcrumb"><span><span><a href="@Url.Action("TrangChuUser","TrangChu")">Trang chủ</a> » <span><a href="@Url.Action("DangNhap","User")">Tư vấn</a></span></span></span></p></div>*@
+<section id="Content">
+    <div class="Content-advise">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div style="margin-top: 30px" class="form">
+                <h2 style="text-align:center; margin-top:-5px">Vui lòng nhập thông tin cần tư vấn</h2>
+
+                <label for="lname">Họ tên</label>
+                <input type="text" id="hoten" name="hoten" placeholder="Nhập họ tên...">
+                <h5 style="color:red">@ViewData["loi1"]</h5>
+
+                <label for="lname">Email</label>
+                <input type="text" id="email" name="email" placeholder="Nhập email...">
+                <h5 style="color:red">@ViewData["loi3"]</h5>
+
+                <label for="country">Số điện thoại</label>
+                <input type="text" id="sdt" name="sdt" placeholder="Nhập số điện thoại...">
+                <h5 style="color:red">@ViewData["loi4"]</h5>
+
+                <div class="form-group">
+                    Chọn chuyên khoa
+                    <div class="col-md-10">
+                        @Html.DropDownList("MaChuyenKhoa", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    Chọn bác sĩ
+                    <div class="col-md-10">
+                        @Html.DropDownList("MaBacSi", null, htmlAttributes: new { @class = "form-control" })
+                    </div>
+                </div>
+                
+                <label for="address">Nội dung cần tư vấn </label>
+                <input type="text" id="nd" name="nd" placeholder="Nội dung...">
+                <h5 style="color:red">@ViewData["loi5"]</h5>
+
+                <button class="Login">Gửi</button>
+            </div>
+        }
+    </div>
+
+    <div class="Content-menu">
+        <ul style="margin-top: 30px">
+            <li><a href="">Khoa Tim mạch</a></li>
+            <li><a href="">Khoa Cơ xương khớp</a></li>
+            <li><a href="">Khoa Răng Hàm mặt</a></li>
+            <li><a href="">Khoa Chuẩn đoán hình ảnh</a></li>
+            <li><a href="">Khoa Nội tiết</a></li>
+        </ul>
+    </div>
+</section>

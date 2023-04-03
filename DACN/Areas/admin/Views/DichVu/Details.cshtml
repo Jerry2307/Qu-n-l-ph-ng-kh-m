@@ -1,0 +1,33 @@
+﻿@model DACN.Models.DichVu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<div>
+    <h2>Chi tiết của các dịch vụ</h2>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.TenDichVu) Tên dịch vụ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenDichVu)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.Gia) Giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDichVu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

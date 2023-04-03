@@ -1,0 +1,48 @@
+﻿
+@model DACN.Models.NguoiThan
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+
+<h2>Bạn có chắc chắn muốn xóa không?</h2>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.HiddenFor(model => model.MaNguoiThan) Mã người thân
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaNguoiThan)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.HoTen) Họ tên người thân
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NamSinh) Năm sinh
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NamSinh)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

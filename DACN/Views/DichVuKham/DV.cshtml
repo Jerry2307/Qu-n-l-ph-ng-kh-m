@@ -1,0 +1,50 @@
+﻿@model IEnumerable<DACN.Models.DichVu>
+
+@{
+    ViewBag.Title = "DV";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="~/Content/CSS/DichVuKham1.css" rel="stylesheet" />
+    <title>Dịch vụ khám</title>
+}
+
+<h1 class="entry-title__h1">Danh mục giá dịch vụ</h1>
+<div class="entry-content">
+    <p>
+        Chất lượng khám chữa bệnh luôn là tiêu chí được Bệnh viện đa khoa DN quan tâm hàng đầu. Bên cạnh đội ngũ giáo sư, bác sĩ giỏi, nhiều năm kinh nghiệm thuộc nhiều chuyên khoa khác nhau, hệ thống trang thiết bị y tế được đầu tư hiện đại và đồng bộ, cơ sở vật chất khang trang, sạch sẽ, tiện nghi. DN còn tiên phong trong việc nâng cao chất lượng phục vụ thông qua hệ thống hồ sơ tra cứu bệnh sử online, đặt lịch khám nhanh chóng và tiện lợi qua hệ thống
+        <strong>tổng đài 1900 55 88 92</strong>
+        giúp tiết kiệm thời gian và công sức cho người bệnh.
+    </p>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            STT
+        </th>
+        <th>
+            Tên dịch vụ
+        </th>
+        <th>
+            Giá (Đơn vị: Đồng)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="text-align: center">
+                @Html.DisplayFor(modelItem => item.MaDichVu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenDichVu)
+            </td>
+            <td style="text-align: center">
+                @Html.DisplayFor(modelItem => item.Gia)
+            </td>
+            <td>
+                <a href="@Url.Action("DatLich","DatLich", new {MaBenhNhan = Session["MaBenhNhan"] })">Đặt lịch ngay</a>
+            </td>
+        </tr>
+    }
+</table>

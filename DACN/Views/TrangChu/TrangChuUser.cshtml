@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "TrangChuUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="~/Content/CSS/TrangChu1.css" rel="stylesheet" />
+    <title>Trang chủ</title>
+}
+
+<div class="hero">
+    <div class="row">
+        <div class="left-sec">            
+            <div class="content">
+                <h2><span>KẾT QUẢ CHUẨN VÀNG – AN TOÀN ĐIỀU TRỊ</span></h2>
+                <p>
+                    Chào mừng bạn đến với Phòng khám đa khoa DN nơi sức khỏe của bạn được cải thiện.
+                    Ứng dụng trang thiết bị tân tiến và hiện đại bậc nhất cùng với phương châm “Người bệnh là trung tâm, thầy thuốc quanh bệnh nhân” chúng tôi luôn cải tiến chất lượng những hoạt động khám bệnh, chữa bệnh nhằm hướng tới người bệnh phục vụ người bệnh.
+                    Còn chờ gì nữa hãy đến với chúng tôi ngay !!!!
+                </p>
+            </div>
+            @using (Html.BeginForm())
+            {
+                <button class="discover-btn">
+                    <a href="@Url.Action("DatLich","DatLich", new {MaBenhNhan = Session["MaBenhNhan"] })">Đặt lịch khám</a>
+                    <span><i class="fa fa-arrow-circle-o-right"></i></span>
+                </button>
+            }
+        </div>
+        <div class="right-sec">
+            <div class="my-car">
+            </div>
+        </div>
+    </div>
+</div>
+

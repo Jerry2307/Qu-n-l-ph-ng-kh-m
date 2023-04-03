@@ -1,0 +1,156 @@
+﻿body {
+    height: 70px;
+    width: 1530px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 890px;
+    margin: 0px auto;
+    margin-top: 6px;
+}
+
+#header {
+    background-color: #33CC33;
+    margin-top: -9px;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+}
+
+#logo {
+    padding: 5px 0px;
+}
+
+#logo img {
+    max-width: 50px;
+    height: auto;
+}
+
+#main-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main-menu li {
+    position: relative;
+}
+
+#main-menu li a {
+    color: white;
+    display: block;
+    padding: 18px 18px;
+    /*text-decoration: 5;*/
+}
+
+#main-menu ul.sub-menu {
+    position: absolute;
+    background-color: rgb(252, 252, 252);
+    padding: 15px 0px;
+    list-style: none;
+    width: 200px;
+    border: 1px solid rgb(252, 252, 252);
+    display: none;
+    color: black;
+}
+
+#main-menu li:hover > ul.sub-menu {
+    display: block;
+}
+
+#main-menu ul.sub-menu a {
+    padding: 8px 15px;
+    color: black;
+    left: 0;
+}
+
+#main-menu ul.sub-menu li:last-child a {
+    border: none;
+}
+
+#main-menu ul.sub-menu ul.sub-menu {
+    left: 199px;
+    top: -15px;
+}
+
+#main-menu > li > a {
+    position: relative;
+}
+
+#main-menu > li > a::before {
+    content: "";
+    height: 4px;
+    width: 0px;
+    background: red;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#main-menu > li:hover > a::before {
+    width: 100%;
+}
+
+#main-menu .sub-menu li:hover > a {
+    color: #33CC33;
+}
+
+a {
+    text-decoration: none;
+}
+
+#Footer {
+    float: left;
+    width: 100%;
+    background-color: green;
+    min-height: 150px;
+    margin-top: 13%;
+}
+
+.row {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.boxcenter2 {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.boxfooter1 {
+    width: 38%;
+    float: left;
+    margin-right: 2%;
+}
+
+.boxfooter2 {
+    width: 38%;
+    float: left;
+    margin-right: 2%;
+}
+
+.boxfooter3 {
+    width: 20%;
+    float: left;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+.mrb10 {
+    margin-bottom: 10px;
+}
+
+#Content {
+    width: 90%;
+    margin: 0px auto;
+}

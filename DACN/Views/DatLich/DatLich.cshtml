@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "DatLich";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="~/Content/CSS/LichKham2.css" rel="stylesheet" />
+    <title>Đặt lịch khám</title>
+}
+
+<div style="margin-top:30px" class="contect-left">
+    <div class="sec32_row0">
+        <span>
+            <a href="@Url.Action("TrangChuUser","TrangChu")" style="color: #33CC33">Trang chủ</a>  »
+            <span>
+                <a>Đặt lịch</a>
+            </span>
+        </span>
+    </div>
+
+    <div class="Content-Book">
+        <h2 style="text-align:center; margin-top:-10px">ĐẶT LỊCH KHÁM</h2>
+        @{
+            DACN.Models.BenhNhan bn = (DACN.Models.BenhNhan)Session["TaiKhoan"];
+        }
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <label for="lname">Họ tên</label>
+            <input class="form-control" id="hoten" name="hoten" type="text" value="@bn.HoTen" />
+
+            <label for="lname">Giới tính</label>
+            <input id="gioitinh" name="gioitinh" type="text" value="@if(bn.GioiTinh == true){@Html.DisplayName("Nam").ToString();}@if(bn.GioiTinh == false){@Html.DisplayName("Nữ").ToString();}" />
+
+            <div class="form-group">
+                Chọn dịch vụ
+                <div class="col-md-10">
+                    @Html.DropDownList("MaDichVu", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+
+            <label for="date">Chọn thời gian khám</label>
+            <div class="col-md-10">
+                <input type="date" name="NgayDatLich" />
+                <input type="time" name="NgayDatLich" />
+                <h3 style="color:red">@Session["loi1"]</h3>
+            </div>
+
+            <label for="lname">Email</label>
+            <input type="text" id="email" name="email" value="@bn.Email">
+
+            <label for="country">Số Điện Thoại</label>
+            <input type="text" id="sdt" name="sdt" value="@bn.SDT">
+
+            <div class="form-group">
+                Chọn chuyên khoa
+                <div class="col-md-10">
+                    @Html.DropDownList("MaChuyenKhoa", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                Chọn bác sĩ
+                <div class="col-md-10">
+                    @Html.DropDownList("MaBacSi", null, htmlAttributes: new { @class = "form-control" })
+                </div>
+            </div>
+
+            <label for="">Triệu chứng </label>
+            <input type="text" id="trieuchung" name="trieuchung" placeholder="Triệu chứng...">
+            <h5 style="color:red">@ViewData["loi2"]</h5>
+
+            <button class="DL">Gửi</button>
+        }
+    </div>
+
+
+    
+</div>
+
+<div class="contect-right">
+    <div class="Content-calendar">
+        <ul class="weekdays">
+            <li><a href="#">Mo</a></li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+            <li>Su</li>
+        </ul>
+
+        <ul class="days">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+        </ul>
+    </div>
+</div>

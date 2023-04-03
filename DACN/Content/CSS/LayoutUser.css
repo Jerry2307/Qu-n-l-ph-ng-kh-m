@@ -1,0 +1,162 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+    background: white;
+    border-bottom: 4px solid #b62831;
+    height: 80px;
+}
+
+    .header .row {
+        margin-top: 70px;
+    }
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+    height: 0px;
+}
+
+    nav ul {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.logo{
+    margin-bottom: 20px;
+}
+.footer {
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 0 20px;
+    margin-top: 75px;
+}
+
+    .footer p {
+        color: #8a8a8a;
+    }
+
+    .footer h3 {
+        font-size: 15px;
+        color: #fff;
+        margin-bottom: 20px;
+        margin-left: 165px;
+    }
+
+    .footer h4 {
+        margin-right: 50px;
+        margin-bottom: 50px;
+        font-size: 15px;
+        color: #fff;
+    }
+
+    .footer h2 {
+        font-size: 15px;
+        margin-bottom: 50px;
+        color: #fff;
+    }
+
+.footer-col-1,
+.footer-col-2,
+.footer-col-3,
+.footer-col-4 {
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col-1 {
+    flex-basis: 30%;
+}
+
+.footer-col-2 {
+    flex: 1;
+    text-align: center;
+}
+
+    .footer-col-2 img {
+        width: 50%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+
+.footer-col-4 {
+    flex-basis: 12%;
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.app-logo {
+    margin-top: 20px;
+}
+
+    .app-logo img {
+        width: 140px;
+    }
+
+.footer hr {
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.info {
+    line-height: 35px;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.sci {
+    position: relative;
+    display: flex;
+}
+
+    .sci li {
+        list-style: none;
+        margin-right: 15px;
+    }
+
+    .sci li a {
+        text-decoration: none;
+        opacity: 0.5;
+        color: #fff;
+        font-size: 32px;
+    }
+    /*Hiệu Ứng Hover Icon*/
+    .sci li:hover a {
+        opacity: 1;
+    }
+/*Ket thuc Footer*/

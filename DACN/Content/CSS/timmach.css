@@ -1,0 +1,27 @@
+﻿.Content-about p {
+    line-height: 1.6;
+    font-family: Arial;
+}
+
+.Content-about h2:not(.muc-chinh) {
+    padding: 0 0;
+    font-weight: 600;
+    color: green;
+    margin: 0.75rem 0;
+}
+
+.Content-about h3:not(.muc-chinh) {
+    padding: 0 0;
+    font-weight: 600;
+    color: green;
+    margin: 0.75rem 0;
+}
+
+.Content-about .img img {
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    max-width: 100%;
+    height: auto;
+    margin-left: 90%;
+    margin-right: 10%;
+}

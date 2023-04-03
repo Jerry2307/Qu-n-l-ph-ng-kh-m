@@ -1,0 +1,100 @@
+﻿@model DACN.Models.BenhNhan
+@{
+    ViewBag.Title = "HoSoUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    <link href="~/Content/CSS/HoSo.css" rel="stylesheet" />
+    <link href="~/Bootstrap/Bút tráp/bootstrap-4.5.3-dist/bootstrap-4.5.3-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Hồ sơ người dùng</title>
+}
+
+<div style="z-index:3;" class="row">
+    <div class="col-md-4 mt-1">
+        <div class="card text-center sidebar">
+            <div class="card-body">
+                <div class="form-group"">
+                    <td><img src="@Url.Content("~/HinhAnh/" + Model.Anh)" class="rounded-circle" style="height: 325px; width: 225px"</td>
+                </div>
+                <div class="mt-3">
+                    <hr style="background-color: black; size:50px; height:10px" />
+                    <a href="@Url.Action("ChangePassword", "HoSoNguoiDung", new {MaBenhNhan = Session["MaBenhNhan"] } )">Thay đổi mật khẩu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8 mt-1">
+        <div class="card mb-3 content">
+            <h1 class="m-3 pt-3">Thông tin cá nhân</h1>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Họ tên</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        @Html.DisplayFor(model => model.HoTen)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Năm sinh</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        @Html.DisplayFor(model => model.NamSinh)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Giới tính</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        @if (Model.GioiTinh == true)
+                        {
+                            @Html.Encode("Nam")
+                        }
+                        @if (Model.GioiTinh == false)
+                        {
+                            @Html.Encode("Nữ")
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>CCCD/CMND</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        @Html.DisplayFor(model => model.CMND_CCCD)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Dân tộc</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        @Html.DisplayFor(model => model.DanToc)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Địa chỉ</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        @Html.DisplayFor(model => model.DiaChi)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h5>Số điện thoại</h5>
+                    </div>
+                    <div class="col-md-9 text-secondary">
+                        @Html.DisplayFor(model => model.SDT)
+                    </div>
+                </div>
+            </div>
+
+            <hr style="background-color: black; size:50px; height:5px" />
+            <div class="card mb-4">
+                <a style="font-size: 20px; margin-left: 45px" href="@Url.Action("ThayDoiThongTin","HoSoNguoiDung", new { MaBenhNhan = Session["MaBenhNhan"] })">Chỉnh sửa thông tin cá nhân</a>
+            </div>
+        </div>
+    </div>
+</div>

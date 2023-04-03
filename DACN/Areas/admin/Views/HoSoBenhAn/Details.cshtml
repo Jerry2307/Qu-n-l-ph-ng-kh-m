@@ -1,0 +1,58 @@
+﻿@model DACN.Models.HoSoBenhAn
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/admin_Layout.cshtml";
+}
+
+<div>
+    <h2>Chi tiết hồ sơ bệnh án</h2>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.HiddenFor(model => model.BenhNhan.HoTen) Họ tên bệnh nhân
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BenhNhan.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NguoiThan.HoTen) Họ tên bệnh nhân
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiThan.HoTen)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NgayNhapVien) Ngày nhập viện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayNhapVien)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.NgayXuatVien) Ngày xuất viện
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayXuatVien)
+        </dd>
+
+        <dt>
+            @Html.HiddenFor(model => model.TomTatBenhAn) Tóm tắt bệnh án
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TomTatBenhAn)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.MaHoSo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

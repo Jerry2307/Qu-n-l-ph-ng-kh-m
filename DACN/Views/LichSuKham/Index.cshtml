@@ -1,0 +1,42 @@
+﻿@model IEnumerable<DACN.Models.DatLichKham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h1 style="text-align:center">Lịch sử đặt khám</h1>
+
+<table style="margin-left:15%;" border="1">
+    <tr style="text-align:center;">
+        <td>Tên bệnh nhân</td>
+        <td>Dịch vụ</td>
+        <td>Ngày đặt lịch</td>
+        <td>Email</td>
+        <td>Số điện thoại</td>
+        <td style="text-align: center">Triệu chứng</td>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BenhNhan.HoTen)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DichVu.TenDichVu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDatLich)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BenhNhan.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BenhNhan.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrieuChung)
+            </td>
+        </tr>
+    }
+</table>
